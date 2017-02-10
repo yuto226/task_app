@@ -1,0 +1,2 @@
+module AdominsHelper
+end
