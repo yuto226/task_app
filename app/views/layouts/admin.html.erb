@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taskapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%=link_to "新規投稿",articles_new_path%>
+    <%=link_to "登録情報変更",edit_admin_registration_path%>
+    <%=link_to "ログアウト",destroy_admin_session_path%>
+    <%= yield %>
+  </body>
+</html>
