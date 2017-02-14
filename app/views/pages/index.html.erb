@@ -1,2 +1,11 @@
-<h1>Pages#index</h1>
-<p></p>
+<%if user_signed_in?%>
+<p><%=current_user.username%>さんこんにちは！</p>
+<p>最新の投稿</p>
+<div class="index">
+  <ul>
+<%@index.each do |f|%>
+<li><%=link_to f.title,page_path(f)%></li>
+<%end%>
+</ul>
+</div>
+<%end%>

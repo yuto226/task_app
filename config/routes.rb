@@ -12,10 +12,9 @@ Rails.application.routes.draw do
   end
   resources:'pages'
   resources:'articles'
-  get 'pages/show'
-  get 'pages/index'
+  get 'pages/root'
   get 'admins/index'
   get 'admins/new'
-  root'pages#index'
+  root'pages#root'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

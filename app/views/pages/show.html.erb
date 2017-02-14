@@ -1,3 +1,7 @@
 <%if user_signed_in?%>
-<p><%=current_user.username%>さんこんにちは！</p>
-<%end%>
+  <div class="show">
+    <ul>
+  <li><%=@show.contents%></li>
+    </ul>
+  </div>
+  <%end%>
