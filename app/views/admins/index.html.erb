@@ -1,2 +1,13 @@
-<p><%=current_admin.username%>さん</p>
-<p>管理者ページです</p>
+<p>最新の投稿</p>
+<div>
+  <ul>
+<%if @index.empty?%>
+<p>まだ投稿がありません。</p>
+<p><%=link_to "ここ",articles_new_path%>から投稿してみましょう！</p>
+<%else%>
+<%@index.each do |f|%>
+<li><%=link_to f.title,"/admins/show/#{f.id}"%></li>
+<%end%>
+<%end%>
+</ul>
+</div>

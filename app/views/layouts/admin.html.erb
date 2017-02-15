@@ -12,9 +12,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%=link_to "HOME",admins_index_path%>
     <%=link_to "新規投稿",articles_new_path%>
     <%=link_to "登録情報変更",edit_admin_registration_path%>
     <%=link_to "ログアウト",destroy_admin_session_path%>
+    <div>
+    <p><%=current_admin.username%>さん</p>
+    <p>管理者ページです</p>
+  </div>
     <%= yield %>
   </body>
 </html>

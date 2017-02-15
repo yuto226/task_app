@@ -1,4 +1,5 @@
 <h1>新規投稿</h1>
+<div class="form">
 <%=form_for @articles do |f|%>
 <div class=title_field>
 <%=f.label :title,"タイトル"%><br>
@@ -6,7 +7,8 @@
 </div>
 <div class=contents_field>
 <%=f.label :contents,"内容"%><br>
-<%=f.text_area :contents%>
+<%=f.text_area :contents,:size => "50x10"%>
 </div>
 <%=f.submit%>
+</div>
 <%end%>

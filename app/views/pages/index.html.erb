@@ -3,9 +3,14 @@
 <p>最新の投稿</p>
 <div class="index">
   <ul>
+    <%if @index.empty?%>
+    <p>現在投稿はありません</p>
+    <p>新しい投稿があるまで少々お待ちください</p>
+    <%else%>
 <%@index.each do |f|%>
 <li><%=link_to f.title,page_path(f)%></li>
 <%end%>
 </ul>
 </div>
+<%end%>
 <%end%>

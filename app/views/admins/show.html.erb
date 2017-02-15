@@ -1,0 +1,6 @@
+  <div class="show">
+    <ul>
+  <p><%=@show.contents%></p>
+  <div><%=link_to "削除",article_path(@show.id),data: {:confirm => "思い出の記事が消えます。\n本当に削除しますか？\nいいんですね？？"},:method=>:delete%></div>
+    </ul>
+  </div>

@@ -1,15 +1,18 @@
 class ArticlesController < ApplicationController
+  layout 'admin'
+  before_action :authenticate_admin!
   def new
     @articles=Article.new
   end
   def create
     admin=Admin.find(current_admin.id)
     @new_article=admin.article.create(article_params)
-    if @new_article.save
     redirect_to admins_index_path
-  else
-    redirect_to articles_new_path
   end
+
+  def destroy
+    Article.destroy(params[:id])
+    redirect_to  admins_index_path
   end
 
   private
